@@ -38,9 +38,8 @@ namespace Science.Projectiles
             projectile.light = 0.1f;
             projectile.ignoreWater = true;
             projectile.tileCollide = true;
-            //?
-
-            
+            projectile.rotation =  3.1415f;
+            projectile.light = 1f;
         }
 
         public override void AI()
