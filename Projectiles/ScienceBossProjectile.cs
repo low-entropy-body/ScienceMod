@@ -116,24 +116,24 @@ namespace Science.Projectiles
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
         {
-            return false;
+            return true;
         }
 
 
 
-        public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
-        {
-            spriteBatch.Draw(texture,
-                projectile.Center - Main.screenPosition,
-                new Rectangle(0, projectile.frame * (int)texture.Size().Y / 3, projectile.width, projectile.height),
-                Color.White,
-                projectile.rotation,
-                new Vector2(texture.Width, texture.Height / 3) / 2,
-                1f,
-                SpriteEffects.None,
-                0f);
+        //public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
+        //{
+        //    spriteBatch.Draw(texture,
+        //        projectile.Center - Main.screenPosition,
+        //        new Rectangle(0, projectile.frame * (int)texture.Size().Y / 3, projectile.width, projectile.height),
+        //        Color.White,
+        //        projectile.rotation,
+        //        new Vector2(texture.Width, texture.Height / 3) / 2,
+        //        1f,
+        //        SpriteEffects.None,
+        //        0f);
 
-        }
+        //}
     }
 
     /// <summary>
@@ -163,6 +163,7 @@ namespace Science.Projectiles
             projectile.ignoreWater = true;
             projectile.tileCollide = true;
             projectile.rotation = 1.57f;
+            projectile.scale = 2f;
         }
 
         public override void AI()
