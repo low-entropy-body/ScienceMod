@@ -38,9 +38,8 @@ namespace Science.Projectiles
             projectile.light = 0.1f;
             projectile.ignoreWater = true;
             projectile.tileCollide = true;
-            //?
-
-            
+            projectile.rotation =  3.1415f;
+            projectile.light = 1f;
         }
 
         public override void AI()
@@ -49,7 +48,7 @@ namespace Science.Projectiles
 
             if(projectile.frameCounter == 1)
             {
-                projectile.rotation = projectile.velocity.ToRotation() + 3.1415f / 2;
+                Main.NewText("Messile Spawned");
             }
             if(projectile.frameCounter % 30 < 10)
             {
@@ -117,24 +116,27 @@ namespace Science.Projectiles
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
         {
-            return false;
+            return true;
         }
 
 
 
-        public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
-        {
-            spriteBatch.Draw(texture,
-                projectile.Center - Main.screenPosition,
-                new Rectangle(0, projectile.frame * (int)texture.Size().Y / 3, projectile.width, projectile.height),
-                Color.White,
-                projectile.rotation,
-                new Vector2(texture.Width, texture.Height / 3) / 2,
-                1f,
-                SpriteEffects.None,
-                0f);
-
-        }
+        //public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
+        //{
+        //    spriteBatch.End();
+        //    spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive);
+        //    spriteBatch.Draw(texture,
+        //        projectile.Center - Main.screenPosition,
+        //        new Rectangle(0, projectile.frame * (int)texture.Size().Y / 3, projectile.width, projectile.height),
+        //        Color.White,
+        //        projectile.rotation,
+        //        new Vector2(texture.Width, texture.Height / 3) / 2,
+        //        1f,
+        //        SpriteEffects.None,
+        //        0f);
+        //    spriteBatch.End();
+        //    spriteBatch.Begin();
+        //}
     }
 
     /// <summary>
@@ -160,10 +162,11 @@ namespace Science.Projectiles
             projectile.penetrate = -1;
             projectile.timeLeft = 60;
             projectile.alpha = 0;
-            projectile.light = 0.1f;
+            projectile.light = 1f;
             projectile.ignoreWater = true;
             projectile.tileCollide = true;
             projectile.rotation = 1.57f;
+            projectile.scale = 2f;
         }
 
         public override void AI()
