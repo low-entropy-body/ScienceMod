@@ -1,2 +1,4 @@
 科学模组
 提供了大量的家具和装饰品，以及众多的boss，武器小怪和npc
+Science Mod
+This Mod implements a lot of furnitures, ornaments, as well as many bosses, weapons, minor foes and npcs.
