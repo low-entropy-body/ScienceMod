@@ -38,6 +38,8 @@ namespace Science.Projectiles
             projectile.light = 0.1f;
             projectile.ignoreWater = true;
             projectile.tileCollide = true;
+            //?
+
             
         }
 
