@@ -1,0 +1,3 @@
+displayName = Science mod
+author = Li
+version = 1.0
